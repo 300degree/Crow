@@ -212,6 +212,57 @@ namespace crow
 
     // clang-format on
 
+    inline std::string status_string(status code)
+    {
+        switch (code)
+        {
+            case CONTINUE: return "Continue";
+            case SWITCHING_PROTOCOLS: return "Switching Protocols";
+
+            case OK: return "OK";
+            case CREATED: return "Create";
+            case ACCEPTED: return "Accepted";
+            case NON_AUTHORITATIVE_INFORMATION: return "Non-Authoritative Information";
+            case NO_CONTENT: return "No Content";
+            case RESET_CONTENT: return "Reset Content";
+            case PARTIAL_CONTENT: return "Partial Content";
+
+            case MULTIPLE_CHOICES: return "Multiple Choices";
+            case MOVED_PERMANENTLY: return "Moved Permanently";
+            case FOUND: return "Found";
+            case SEE_OTHER: return "See Other";
+            case NOT_MODIFIED: return "Not Modified";
+            case TEMPORARY_REDIRECT: return "Temporary Redirect";
+            case PERMANENT_REDIRECT: return "Permanent Redirect";
+
+            case BAD_REQUEST: return "Bad Request";
+            case UNAUTHORIZED: return "Unauthorized";
+            case FORBIDDEN: return "Forbidden";
+            case NOT_FOUND: return "Not Found";
+            case METHOD_NOT_ALLOWED: return "Method Not Allowed";
+            case NOT_ACCEPTABLE: return "Not Acceptable";
+            case PROXY_AUTHENTICATION_REQUIRED: return "Proxy Authentication Required";
+            case CONFLICT: return "Conflict";
+            case GONE: return "Gone";
+            case PAYLOAD_TOO_LARGE: return "Payload Too Large";
+            case UNSUPPORTED_MEDIA_TYPE: return "Unsupported Media Type";
+            case RANGE_NOT_SATISFIABLE: return "Range Not Satisfiable";
+            case EXPECTATION_FAILED: return "Expectation Failed";
+            case PRECONDITION_REQUIRED: return "Precondition Required";
+            case TOO_MANY_REQUESTS: return "Too Many Requests";
+            case UNAVAILABLE_FOR_LEGAL_REASONS: return "Unavailable For Legal Reason";
+
+            case INTERNAL_SERVER_ERROR: return "Internal Server Error";
+            case NOT_IMPLEMENTED: return "Not Implemented";
+            case BAD_GATEWAY: return "Bad Gateway";
+            case SERVICE_UNAVAILABLE: return "Service Unavailable";
+            case GATEWAY_TIMEOUT: return "Gateway Timeout";
+            case VARIANT_ALSO_NEGOTIATES: return "Variant Also Negotiates";
+
+            default: return "Invalid Status Code";
+        }
+    }
+
     enum class ParamType : char
     {
         INT,
